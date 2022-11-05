@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza dilevery tycoon</title>
+            <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js" target="_blank"></script>
+            <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js" target="_blank"></script>
+            <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js" target="_blank"></script>
+            <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+            <script src="./drive.js"></script>
+    </head>
+    <body>
+        <a-scene id="scene" background="color:lightblue">
+            
+            <a-assets>
+                <a-asset-item id="city" src="./assets/city_scene/scene.gltf"></a-asset-item>
+                <a-asset-item id="handle" src="./assets/bike_handle/handle.glb"></a-asset-item>
+            </a-assets>
+
+            <!--city scene environment-->
+            <a-entity id="cityScene" gltf-model="#city" scale="0.1 0.1 0.1" position="100 0 -70" rotation="0 90 0"></a-entity>
+            
+            <a-entity id="camera" camera position="-60 -7 3" rotation="0 -90 0" wasd-controls="enabled:true">
+            <a-entity id="first-person-view" gltf-model="#handle" scale="0.1 0.1 0.1" position="0 -6 2 " rotation="0 -90 0"></a-entity>
+        </a-entity>
+        </a-scene>
+    </body>
+
+</html>
